@@ -1615,7 +1615,7 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ReactBnbGallery).call(this, props));
     _this.state = {
-      photos: null
+      photos: getPhotos(props.photos)
     };
     _this.close = _this.close.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.onKeyDown = _this.onKeyDown.bind(_assertThisInitialized(_assertThisInitialized(_this)));
@@ -1623,6 +1623,15 @@ function (_Component) {
   }
 
   _createClass(ReactBnbGallery, [{
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      if (this.props.photos !== nextProps.photos) {
+        this.setState({
+          photos: nextProps.photos
+        });
+      }
+    }
+  }, {
     key: "onKeyDown",
     value: function onKeyDown(event) {
       if (/input|textarea/i.test(event.target.tagName)) {
@@ -1719,17 +1728,6 @@ function (_Component) {
         ref: "gallery",
         photos: photos
       }, galleryProps))))))))));
-    }
-  }], [{
-    key: "getDerivedStateFromProps",
-    value: function getDerivedStateFromProps(props, state) {
-      if (props.photos !== state.photos) {
-        return {
-          photos: getPhotos(props.photos)
-        };
-      }
-
-      return null;
     }
   }]);
 

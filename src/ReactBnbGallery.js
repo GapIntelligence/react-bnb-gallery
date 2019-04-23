@@ -62,19 +62,18 @@ class ReactBnbGallery extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      photos: null,
+      photos: getPhotos(props.photos),
     };
     this.close = this.close.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
   }
 
-  static getDerivedStateFromProps(props, state) {
-    if (props.photos !== state.photos) {
-      return {
-        photos: getPhotos(props.photos),
-      };
+  componentWillReceiveProps(nextProps) {
+    if (this.props.photos !== nextProps.photos) {
+      this.setState({
+        photos: nextProps.photos
+      });
     }
-    return null;
   }
 
   onKeyDown(event) {

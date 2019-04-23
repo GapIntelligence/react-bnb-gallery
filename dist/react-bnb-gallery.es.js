@@ -1611,7 +1611,7 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ReactBnbGallery).call(this, props));
     _this.state = {
-      photos: null
+      photos: getPhotos(props.photos)
     };
     _this.close = _this.close.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.onKeyDown = _this.onKeyDown.bind(_assertThisInitialized(_assertThisInitialized(_this)));
@@ -1619,6 +1619,15 @@ function (_Component) {
   }
 
   _createClass(ReactBnbGallery, [{
+    key: "componentWillReceiveProps",
+    value: function componentWillReceiveProps(nextProps) {
+      if (this.props.photos !== nextProps.photos) {
+        this.setState({
+          photos: nextProps.photos
+        });
+      }
+    }
+  }, {
     key: "onKeyDown",
     value: function onKeyDown(event) {
       if (/input|textarea/i.test(event.target.tagName)) {
@@ -1691,19 +1700,19 @@ function (_Component) {
       return React.createElement(Portal, {
         __source: {
           fileName: _jsxFileName$b,
-          lineNumber: 165
+          lineNumber: 164
         },
         __self: this
       }, React.createElement(FocusTrap, {
         __source: {
           fileName: _jsxFileName$b,
-          lineNumber: 166
+          lineNumber: 165
         },
         __self: this
       }, React.createElement("div", _extends({}, modalProps, {
         __source: {
           fileName: _jsxFileName$b,
-          lineNumber: 167
+          lineNumber: 166
         },
         __self: this
       }), React.createElement("div", {
@@ -1711,42 +1720,42 @@ function (_Component) {
         className: "gallery-modal--overlay",
         __source: {
           fileName: _jsxFileName$b,
-          lineNumber: 168
+          lineNumber: 167
         },
         __self: this
       }), React.createElement("div", {
         className: "gallery-modal--container",
         __source: {
           fileName: _jsxFileName$b,
-          lineNumber: 172
+          lineNumber: 171
         },
         __self: this
       }, React.createElement("div", {
         className: "gallery-modal--table",
         __source: {
           fileName: _jsxFileName$b,
-          lineNumber: 173
+          lineNumber: 172
         },
         __self: this
       }, React.createElement("div", {
         className: "gallery-modal--cell",
         __source: {
           fileName: _jsxFileName$b,
-          lineNumber: 174
+          lineNumber: 173
         },
         __self: this
       }, React.createElement("div", {
         className: "gallery-modal--content",
         __source: {
           fileName: _jsxFileName$b,
-          lineNumber: 175
+          lineNumber: 174
         },
         __self: this
       }, React.createElement("div", {
         className: "gallery-modal--close",
         __source: {
           fileName: _jsxFileName$b,
-          lineNumber: 176
+          lineNumber: 175
         },
         __self: this
       }, React.createElement(GalleryCloseButton, {
@@ -1754,28 +1763,28 @@ function (_Component) {
         light: light,
         __source: {
           fileName: _jsxFileName$b,
-          lineNumber: 177
+          lineNumber: 176
         },
         __self: this
       })), React.createElement("div", {
         className: "gallery-content",
         __source: {
           fileName: _jsxFileName$b,
-          lineNumber: 182
+          lineNumber: 181
         },
         __self: this
       }, React.createElement("div", {
         className: "gallery-top",
         __source: {
           fileName: _jsxFileName$b,
-          lineNumber: 183
+          lineNumber: 182
         },
         __self: this
       }, React.createElement("div", {
         className: "gallery-top--inner",
         __source: {
           fileName: _jsxFileName$b,
-          lineNumber: 184
+          lineNumber: 183
         },
         __self: this
       })), React.createElement(Gallery, _extends({
@@ -1785,21 +1794,10 @@ function (_Component) {
       }, galleryProps, {
         __source: {
           fileName: _jsxFileName$b,
-          lineNumber: 186
+          lineNumber: 185
         },
         __self: this
       }))))))))));
-    }
-  }], [{
-    key: "getDerivedStateFromProps",
-    value: function getDerivedStateFromProps(props, state) {
-      if (props.photos !== state.photos) {
-        return {
-          photos: getPhotos(props.photos)
-        };
-      }
-
-      return null;
     }
   }]);
 

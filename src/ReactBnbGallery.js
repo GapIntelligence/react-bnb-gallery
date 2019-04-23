@@ -155,7 +155,7 @@ class ReactBnbGallery extends Component {
       role: 'dialog',
       tabIndex: -1,
       onKeyDown: keyboard && this.onKeyDown,
-      zindex,
+      style: { zIndex: zindex }
     };
 
     // modal overlay customization styles

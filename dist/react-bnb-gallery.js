@@ -1686,7 +1686,9 @@ function (_Component) {
         role: 'dialog',
         tabIndex: -1,
         onKeyDown: keyboard && this.onKeyDown,
-        zindex: zindex
+        style: {
+          zIndex: zindex
+        }
       }; // modal overlay customization styles
 
       var galleryModalOverlayStyles = this.getModalOverlayStyles();

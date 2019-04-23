@@ -64,7 +64,6 @@ class ReactBnbGallery extends Component {
     this.state = {
       photos: null,
     };
-    this.gallery = React.createRef();
     this.close = this.close.bind(this);
     this.onKeyDown = this.onKeyDown.bind(this);
   }
@@ -91,12 +90,12 @@ class ReactBnbGallery extends Component {
 
       case ARROW_LEFT_KEYCODE:
         event.preventDefault();
-        this.gallery.current.prev();
+        this.refs.gallery.current.prev();
         break;
 
       case ARROW_RIGHT_KEYCODE:
         event.preventDefault();
-        this.gallery.current.next();
+        this.refs.gallery.current.next();
         break;
 
       default:
@@ -186,7 +185,7 @@ class ReactBnbGallery extends Component {
                       </div>
                       <Gallery
                         phrases={phrases}
-                        ref={this.gallery}
+                        ref='gallery'
                         photos={photos}
                         {...galleryProps}
                       />

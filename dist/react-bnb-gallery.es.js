@@ -1642,12 +1642,12 @@ function (_Component) {
 
         case ARROW_LEFT_KEYCODE:
           event.preventDefault();
-          this.refs.gallery.current.prev();
+          this.refs.gallery.prev();
           break;
 
         case ARROW_RIGHT_KEYCODE:
           event.preventDefault();
-          this.refs.gallery.current.next();
+          this.refs.gallery.next();
           break;
 
         default:

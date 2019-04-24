@@ -717,6 +717,12 @@ function (_PureComponent) {
   }
 
   _createClass(GalleryCaption, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var current = this.props.current;
+      this.setThumbnailsWrapperScrollLeft(current);
+    }
+  }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
       var current = this.props.current;
@@ -781,7 +787,7 @@ function (_PureComponent) {
         number: index,
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 108
+          lineNumber: 113
         },
         __self: this
       });
@@ -803,56 +809,56 @@ function (_PureComponent) {
         className: className,
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 137
+          lineNumber: 142
         },
         __self: this
       }, React.createElement("div", {
         className: "gallery-figcaption--content",
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 138
+          lineNumber: 143
         },
         __self: this
       }, React.createElement("div", {
         className: "gallery-figcaption--inner",
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 139
+          lineNumber: 144
         },
         __self: this
       }, React.createElement("div", {
         className: "gallery-figcaption--info",
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 140
+          lineNumber: 145
         },
         __self: this
       }, React.createElement("div", {
         className: "caption-left",
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 141
+          lineNumber: 146
         },
         __self: this
       }, currentPhoto.caption && React.createElement("h3", {
         className: "photo-caption",
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 143
+          lineNumber: 148
         },
         __self: this
       }, currentPhoto.caption), currentPhoto.subcaption && React.createElement("p", {
         className: "photo-subcaption",
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 148
+          lineNumber: 153
         },
         __self: this
       }, currentPhoto.subcaption)), this.hasMoreThanOnePhoto && React.createElement("div", {
         className: "caption-right",
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 154
+          lineNumber: 159
         },
         __self: this
       }, React.createElement(GalleryTogglePhotoList, {
@@ -861,7 +867,7 @@ function (_PureComponent) {
         onPress: this.toggleThumbnails,
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 155
+          lineNumber: 160
         },
         __self: this
       }))), this.hasMoreThanOnePhoto && React.createElement("div", {
@@ -870,7 +876,7 @@ function (_PureComponent) {
         ref: this.setGalleryFigcaptionRef,
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 164
+          lineNumber: 169
         },
         __self: this
       }, React.createElement("div", {
@@ -880,7 +886,7 @@ function (_PureComponent) {
         },
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 169
+          lineNumber: 174
         },
         __self: this
       }, React.createElement("ul", {
@@ -888,7 +894,7 @@ function (_PureComponent) {
         ref: this.setGalleryThubmanilsRef,
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 173
+          lineNumber: 178
         },
         __self: this
       }, photos.map(function (photo, index) {
@@ -896,7 +902,7 @@ function (_PureComponent) {
           key: photo.photo,
           __source: {
             fileName: _jsxFileName$5,
-            lineNumber: 178
+            lineNumber: 183
           },
           __self: this
         }, _this2.renderThumbnail(photo, index, _this2.onThumbnailPress));

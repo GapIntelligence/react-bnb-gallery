@@ -57,6 +57,11 @@ class GalleryCaption extends PureComponent {
     this.toggleThumbnails = this.toggleThumbnails.bind(this);
   }
 
+  componentDidMount() {
+    var current = this.props.current;
+    this.setThumbnailsWrapperScrollLeft(current);
+  }
+
   componentDidUpdate(prevProps) {
     const { current } = this.props;
     if (current !== prevProps.current) {

@@ -28,8 +28,8 @@
     "url": "https://github.com/peterpalau/react-bnb-gallery/issues"
   },
   "engines": {
-    "node": ">=8",
-    "npm": ">=5"
+    "node": ">=6",
+    "npm": ">=3"
   },
   "scripts": {
     "test": "jest --no-cache",

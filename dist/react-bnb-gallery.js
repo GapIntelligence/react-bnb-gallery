@@ -751,6 +751,10 @@ function (_PureComponent) {
   }, {
     key: "setThumbnailsWrapperScrollLeft",
     value: function setThumbnailsWrapperScrollLeft(current) {
+      if (!this.thumbnailsWrapperRef) {
+        return;
+      }
+
       var photos = this.props.photos;
       var bounding = this.thumbnailsWrapperRef.getBoundingClientRect();
       var scrollLeft = calculateThumbnailsLeftScroll(current, photos.length, bounding);
@@ -792,7 +796,7 @@ function (_PureComponent) {
         number: index,
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 113
+          lineNumber: 117
         },
         __self: this
       });
@@ -814,56 +818,56 @@ function (_PureComponent) {
         className: className,
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 142
+          lineNumber: 146
         },
         __self: this
       }, React__default.createElement("div", {
         className: "gallery-figcaption--content",
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 143
+          lineNumber: 147
         },
         __self: this
       }, React__default.createElement("div", {
         className: "gallery-figcaption--inner",
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 144
+          lineNumber: 148
         },
         __self: this
       }, React__default.createElement("div", {
         className: "gallery-figcaption--info",
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 145
+          lineNumber: 149
         },
         __self: this
       }, React__default.createElement("div", {
         className: "caption-left",
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 146
+          lineNumber: 150
         },
         __self: this
       }, currentPhoto.caption && React__default.createElement("h3", {
         className: "photo-caption",
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 148
+          lineNumber: 152
         },
         __self: this
       }, currentPhoto.caption), currentPhoto.subcaption && React__default.createElement("p", {
         className: "photo-subcaption",
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 153
+          lineNumber: 157
         },
         __self: this
       }, currentPhoto.subcaption)), this.hasMoreThanOnePhoto && React__default.createElement("div", {
         className: "caption-right",
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 159
+          lineNumber: 163
         },
         __self: this
       }, React__default.createElement(GalleryTogglePhotoList, {
@@ -872,7 +876,7 @@ function (_PureComponent) {
         onPress: this.toggleThumbnails,
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 160
+          lineNumber: 164
         },
         __self: this
       }))), this.hasMoreThanOnePhoto && React__default.createElement("div", {
@@ -881,7 +885,7 @@ function (_PureComponent) {
         ref: this.setGalleryFigcaptionRef,
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 169
+          lineNumber: 173
         },
         __self: this
       }, React__default.createElement("div", {
@@ -891,7 +895,7 @@ function (_PureComponent) {
         },
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 174
+          lineNumber: 178
         },
         __self: this
       }, React__default.createElement("ul", {
@@ -899,7 +903,7 @@ function (_PureComponent) {
         ref: this.setGalleryThubmanilsRef,
         __source: {
           fileName: _jsxFileName$5,
-          lineNumber: 178
+          lineNumber: 182
         },
         __self: this
       }, photos.map(function (photo, index) {
@@ -907,7 +911,7 @@ function (_PureComponent) {
           key: photo.photo,
           __source: {
             fileName: _jsxFileName$5,
-            lineNumber: 183
+            lineNumber: 187
           },
           __self: this
         }, _this2.renderThumbnail(photo, index, _this2.onThumbnailPress));

@@ -81,6 +81,10 @@ class GalleryCaption extends PureComponent {
   }
 
   setThumbnailsWrapperScrollLeft(current) {
+    if (!this.thumbnailsWrapperRef) {
+      return;
+    }
+
     const { photos } = this.props;
     const bounding = this.thumbnailsWrapperRef.getBoundingClientRect();
     const scrollLeft = calculateThumbnailsLeftScroll(current, photos.length, bounding);
